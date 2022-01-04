@@ -16,27 +16,27 @@ In this repository, I will be using Docker Compose to containerize my Laravel ap
 
 Build the app image with the following command :
 
-    - docker-compose build app
+     docker-compose build app
 
 After the app build process is finished, use the following command to run the environment in background mode :
 
-    - docker-compose up -d
+     docker-compose up -d
 
 To check containers running in the background, use the following command :
 
-    - docker ps
+     docker ps
 
 After that we will run the command inside the application container to install the application dependencies :
 
-    - docker-compose exec app composer install
+     docker-compose exec app composer install
 
 The last thing to do before testing this app is to generate a unique app key with the Laravel artisan command line tool. This key is used to encrypt user sessions and other sensitive data :
 
-    - docker-compose exec app php artisan key:generate
+     docker-compose exec app php artisan key:generate
 
 Now, open a browser and access the server's domain name or IP address on port 8000 :
 
-    - http://server_domain_or_IP:8000
+     http://server_domain_or_IP:8000
 
 
 # 
@@ -45,4 +45,4 @@ Note: If running this demo on a local machine, use http://localhost:8000 to acce
 
 To kill the Docker Compose environment and remove all of its containers, networks, and volumes, run:
 
-    - docker-compose down
+     docker-compose down
